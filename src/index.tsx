@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { ConnectedRouter } from 'connected-react-router';
 import { PersistGate } from 'redux-persist/integration/react';
 import { Provider } from 'react-redux';
-import { Detector } from 'react-detect-offline';
+import {Detector} from './types';
 import OfflineView from './_shared/components/OfflineView';
 import App from './App';
 import store, { history, persistor } from './redux/store';
@@ -22,7 +22,7 @@ const main = (
 );
 // render the main component
 ReactDOM.render(
-    <Detector render={({ online }) => (online ? main : <OfflineView />)} />,
+    <Detector render={({ online }: any) => (online ? main : <OfflineView />)} />,
     container
 );
 

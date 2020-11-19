@@ -1,5 +1,5 @@
-import jwtDecode from 'jwt-decode';
-import store from '../../redux/store';
+import jwtDecode from "jwt-decode";
+import store from "../../redux/store";
 
 class AuthService {
   constructor() {

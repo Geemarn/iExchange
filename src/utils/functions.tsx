@@ -1,15 +1,16 @@
-import {isString} from 'lodash';
+import React from "react";
+import { isString } from "lodash";
 
-export const createActionType = (type, entity = "App") => ({
+export const createActionType = (type: String, entity: String = "App") => ({
   START: `@@[${entity}] ${type}`,
   SUCCESS: `@@[${entity}] ${type}_SUCCESS`,
   ERROR: `@@[${entity}] ${type}_ERROR`,
   END: `@@[${entity}] ${type}_END`,
 });
-export const createActionString = (type, entity = "App") =>
+export const createActionString = (type: String, entity: String = "App") =>
   `@@[${entity}] ${type}`;
 
-export const formatMessagesFromError = (error) => {
+export const formatMessagesFromError = (error: any): React.ReactNode => {
   let message = (
     <>
       <span>
@@ -37,7 +38,7 @@ export const formatMessagesFromError = (error) => {
           {Object.keys(error.messages).map((item) => {
             return (
               Array.isArray(error.messages[item]) &&
-              error.messages[item].map((item2, i) => <li key={i}>{item2}</li>)
+              error.messages[item].map((item2: any, i: number) => <li key={i}>{item2}</li>)
             );
           })}
         </ul>
